@@ -1,0 +1,510 @@
+/* Generated from the supplied preset-config.json. The Google Doc remains the source of truth. */
+export const PRESET_VERSION = "1.0" as const;
+
+export const LEVELS: Record<number, string> = {
+  "1": "Solo",
+  "2": "Single step with review",
+  "3": "Short chain",
+  "4": "Full loop"
+};
+
+export const AXES = {
+  "Intensity": [
+    "very brief",
+    "brief",
+    "standard",
+    "detailed",
+    "very detailed"
+  ],
+  "Tone": [
+    "casual",
+    "friendly",
+    "neutral",
+    "professional",
+    "formal"
+  ],
+  "Specificity": [
+    "general",
+    "some detail",
+    "specific",
+    "highly specific",
+    "exact figures from profile"
+  ],
+  "Boldness": [
+    "modest",
+    "measured",
+    "confident",
+    "assertive",
+    "strongly assertive"
+  ],
+  "Persona": [
+    "early-career",
+    "developing",
+    "established",
+    "senior",
+    "expert"
+  ]
+} as const;
+
+export type TuningArea = keyof typeof AXES;
+
+export const DEFAULTS: Record<TuningArea, number> = {
+  "Intensity": 3,
+  "Tone": 3,
+  "Specificity": 3,
+  "Boldness": 2,
+  "Persona": 3
+};
+
+export type Preset = {
+  number: number;
+  name: string;
+  level: 1 | 2 | 3 | 4;
+  tuning: "none" | "all" | "spec-persona";
+  steps: number;
+  reviewStops: number[] | null;
+};
+
+export const PRESETS: Preset[] = [
+  {
+    "number": 1,
+    "name": "Match Check",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 2,
+    "name": "Keyword Pull",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 3,
+    "name": "Job Fit Score",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 4,
+    "name": "Salary Check",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 5,
+    "name": "Competency Map",
+    "level": 3,
+    "tuning": "none",
+    "steps": 3,
+    "reviewStops": []
+  },
+  {
+    "number": 6,
+    "name": "Knockout Check",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 7,
+    "name": "Level Check",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 8,
+    "name": "Strategy Picker",
+    "level": 3,
+    "tuning": "none",
+    "steps": 3,
+    "reviewStops": []
+  },
+  {
+    "number": 9,
+    "name": "Language Mirror",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 10,
+    "name": "Proof Map",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 11,
+    "name": "Quantify Me",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 12,
+    "name": "Portfolio Picks",
+    "level": 3,
+    "tuning": "none",
+    "steps": 3,
+    "reviewStops": []
+  },
+  {
+    "number": 13,
+    "name": "Gap Note",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 14,
+    "name": "Adjacent Bridge",
+    "level": 3,
+    "tuning": "none",
+    "steps": 3,
+    "reviewStops": []
+  },
+  {
+    "number": 15,
+    "name": "Gap Phrases",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 16,
+    "name": "Coverage Report",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 17,
+    "name": "Self-Rubric",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 18,
+    "name": "STAR Builder",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 19,
+    "name": "STAR Bank",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 20,
+    "name": "Interview Prep",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 21,
+    "name": "Likely Question Bank",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 22,
+    "name": "Answer Evidence Map",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 23,
+    "name": "Follow-Up Drill",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 24,
+    "name": "Strong-Answer Signals",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 25,
+    "name": "Red Flag Check",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 26,
+    "name": "Interview Walkthrough",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 27,
+    "name": "Sample Task Plan",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 28,
+    "name": "Question Quality Check",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 29,
+    "name": "Tailor Resume",
+    "level": 2,
+    "tuning": "all",
+    "steps": 1,
+    "reviewStops": [
+      1
+    ]
+  },
+  {
+    "number": 30,
+    "name": "Resume Trim",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 31,
+    "name": "Cover Letter (Confident)",
+    "level": 2,
+    "tuning": "all",
+    "steps": 1,
+    "reviewStops": [
+      1
+    ]
+  },
+  {
+    "number": 32,
+    "name": "Cover Letter (Short)",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 33,
+    "name": "Opening Line",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 34,
+    "name": "Motivation Line",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 35,
+    "name": "Relevant Experience Pick",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 36,
+    "name": "Value Statement",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 37,
+    "name": "Closing Options",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 38,
+    "name": "Four-Paragraph Build",
+    "level": 2,
+    "tuning": "all",
+    "steps": 1,
+    "reviewStops": [
+      1
+    ]
+  },
+  {
+    "number": 39,
+    "name": "Length Trim",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 40,
+    "name": "Strategy Letter: Technical",
+    "level": 2,
+    "tuning": "all",
+    "steps": 1,
+    "reviewStops": [
+      1
+    ]
+  },
+  {
+    "number": 41,
+    "name": "Strategy Letter: Architecture",
+    "level": 2,
+    "tuning": "all",
+    "steps": 1,
+    "reviewStops": [
+      1
+    ]
+  },
+  {
+    "number": 42,
+    "name": "Strategy Letter: Remote",
+    "level": 2,
+    "tuning": "all",
+    "steps": 1,
+    "reviewStops": [
+      1
+    ]
+  },
+  {
+    "number": 43,
+    "name": "Strategy Letter: Growth",
+    "level": 2,
+    "tuning": "all",
+    "steps": 1,
+    "reviewStops": [
+      1
+    ]
+  },
+  {
+    "number": 44,
+    "name": "Strategy Letter: Direct",
+    "level": 2,
+    "tuning": "all",
+    "steps": 1,
+    "reviewStops": [
+      1
+    ]
+  },
+  {
+    "number": 45,
+    "name": "Recruiter Message",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 46,
+    "name": "Follow-Up Email",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 47,
+    "name": "Reference Prep",
+    "level": 1,
+    "tuning": "none",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 48,
+    "name": "Honesty Check",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 49,
+    "name": "Eight-Point Review",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 50,
+    "name": "Resume Overlap Check",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 51,
+    "name": "Natural Voice Check",
+    "level": 1,
+    "tuning": "spec-persona",
+    "steps": 0,
+    "reviewStops": []
+  },
+  {
+    "number": 52,
+    "name": "Package Plan",
+    "level": 4,
+    "tuning": "none",
+    "steps": 7,
+    "reviewStops": null
+  }
+];
+
+export const GROUPS: { label: string; start: number; end: number }[] = [
+  { label: "A · Analyze the Job", start: 1, end: 9 },
+  { label: "B · Prove Your Fit", start: 10, end: 17 },
+  { label: "C · Stories and Interview Prep", start: 18, end: 28 },
+  { label: "D · Write", start: 29, end: 47 },
+  { label: "E · Review", start: 48, end: 51 },
+  { label: "F · Package", start: 52, end: 52 },
+];
